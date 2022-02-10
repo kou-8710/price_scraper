@@ -31,6 +31,7 @@ function hello_world()
     $result1 = $element1[0]->getText(); // fill the search box
     $result2 = $element2[0]->getText(); // fill the search box
 
+    //正規表現でカッコの付いた単語を削除する
     $result1 = preg_replace("/\〔.+?\〕/", "", $result1);
     $result1 = preg_replace("/\【.+?\】/", "", $result1);
     
