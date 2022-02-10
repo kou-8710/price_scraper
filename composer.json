@@ -1,0 +1,15 @@
+{
+    "name": "user1/selenium",
+    "autoload": {
+        "psr-4": {
+            "User1\\Selenium\\": "src/"
+        }
+    },
+    "authors": [{
+        "name": "kou-8710",
+        "email": "90.lop.121@gmail.com"
+    }],
+    "require": {
+        "php-webdriver/webdriver": "^1.12"
+    }
+}
