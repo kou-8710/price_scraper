@@ -30,6 +30,9 @@ function hello_world()
     // $element = $driver->executeScript('return document.getElementsByTagName("ntp-app")[0]');
     $result1 = $element1[0]->getText(); // fill the search box
     $result2 = $element2[0]->getText(); // fill the search box
+
+    $result1 = preg_replace("/\〔.+?\〕/", "", $result1);
+    $result1 = preg_replace("/\【.+?\】/", "", $result1);
     
     var_dump($result1);
     var_dump($result2);
