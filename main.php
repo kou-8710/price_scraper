@@ -41,6 +41,7 @@ function hello_world()
     sleep(3);
     $driver->close();
 
+    //csvファイルに表示する
     $ary = array(
         array("タイトル", "値段"),
         array($result1, $result2)
@@ -49,17 +50,30 @@ function hello_world()
     //    var_dump($ary);
 
       // ファイルを書き込み用に開きます。
-      $f = fopen("test.csv", "w");
-      // 正常にファイルを開くことができていれば、書き込みます。
-      if ( $f ) {
-        // $ary から順番に配列を呼び出して書き込みます。
-        foreach($ary as $line){
-          // fputcsv関数でファイルに書き込みます。
-          fputcsv($f, $line);
-        } 
-      }
-      // ファイルを閉じます。
-      fclose($f);
+       file_put_contents("test.html", "
+       
+       <!DOCTYPE html>
+       <html lang=\"ja\">
+       <head>
+         <meta charset=\"UTF-8\">
+         <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+         <title>ポートフォリオ</title>
+       </head>
+       <body>
+        <table>
+          <tr>
+            <th>{$ary[0][0]}</th>
+            <th>{$ary[0][1]}</th>
+          </tr>
+          <tr>
+            <td>{$ary[1][0]}</td>
+            <td>{$ary[1][1]}</td>
+          </tr>
+         </table>
+       </body>
+       </html>
+       ");
 }
 
 hello_world();
